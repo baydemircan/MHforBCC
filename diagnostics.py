@@ -2,18 +2,7 @@
 import numpy as np
 
 def gelman_rubin_statistic(chains):
-    """
-    Computes the Gelman-Rubin statistic for MCMC chains.
     
-    Parameters:
-    chains : list of numpy arrays
-        Each element in the list is a numpy array of shape (num_samples, num_params)
-        representing the samples from one chain.
-        
-    Returns:
-    R_hat : numpy array
-        Gelman-Rubin statistics for each parameter.
-    """
     M = len(chains)  
     N = chains[0].shape[0]  
     

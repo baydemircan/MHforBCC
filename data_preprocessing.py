@@ -5,18 +5,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 
 def load_and_preprocess_data(file_path):
-    """
-    Load and preprocess data for machine learning.
     
-    Parameters:
-        file_path (str): Path to the dataset CSV file.
-    
-    Returns:
-        X_pca (ndarray): PCA-transformed feature matrix.
-        y (Series): Target variable.
-        selected_features (list): Names of selected features after variance thresholding.
-        explained_variance (list): Explained variance ratio for PCA components.
-    """
     # Load data
     data = pd.read_csv(file_path)
     
@@ -47,15 +36,7 @@ def load_and_preprocess_data(file_path):
     return X_pca, y, selected_features, explained_variance
 
 def check_correlations(X):
-    """
-    Check for high correlations between features.
     
-    Parameters:
-        X (DataFrame): Feature matrix as a DataFrame with column names.
-        
-    Returns:
-        list of tuples: Highly correlated feature pairs.
-    """
     correlation_matrix = X.corr()
     high_corr = np.where(np.abs(correlation_matrix) > 0.8)
     high_corr = [
